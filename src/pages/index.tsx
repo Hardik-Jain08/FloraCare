@@ -123,8 +123,6 @@ export default function Home() {
 	);
 }
 
-
-
 const LooseDecorationsSetBottom = styled.div`
 	position: relative;
 	${uptoDesktop} {
@@ -152,12 +150,6 @@ const DecoMiddleRight = styled.div`
 	left: calc(100% - 30em);
 	bottom: 5em;
 `;
-
-
-
-
-
-
 
 const Header = styled.div`
 	position: relative;
