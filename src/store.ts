@@ -2,6 +2,7 @@ import React, { createContext, useContext, useState } from "react";
 
 interface PlantDetails {
 	name: string;
+	commonName: string;
 	score: number;
 }
 

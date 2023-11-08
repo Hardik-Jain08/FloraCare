@@ -15,8 +15,8 @@ export function UploadFile() {
 	} = useIdentifyPlant();
 
 	return (
-		<div className='flex items-center justify-center w-full py-12 flex-col'>
-			<label className='flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer backdrop-blur-md hover:backdrop-blur-sm'>
+		<div className='flex items-center justify-center py-6 md:py-12 flex-col  w-3/4 md:w-full mx-auto overflow-hidden'>
+			<label className='flex flex-col items-center justify-center h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer backdrop-blur-md hover:backdrop-blur-sm '>
 				<div className='flex flex-col items-center justify-center p-4 pb-6'>
 					{!currentImage && (
 						<>
@@ -70,7 +70,9 @@ export function UploadFile() {
 						</div>
 					)}
 					{error && (
-						<p className='mt-4 text-xs text-red-500'>{error}</p>
+						<p className='mt-4 text-sm font-normal text-red-400'>
+							{error}
+						</p>
 					)}
 				</div>
 				<input

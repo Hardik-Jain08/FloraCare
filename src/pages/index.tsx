@@ -72,7 +72,7 @@ export default function Home() {
 								</h1>
 							</HeadingGroup>
 							<Description>
-								<p>Something about a new world!</p>
+								<p>Your pocket plant expert</p>
 								{/* <ButtonGroupCenteredUptoDesktop>
 									<SignUpButton
 										appearance='filled-white'

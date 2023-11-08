@@ -22,6 +22,7 @@ export function useIdentifyPlant() {
 		setPlantDetails({
 			name: data.bestMatch,
 			score: data.results[0].score,
+			commonName: data.results[0].species.commonNames[0],
 		});
 	}
 
@@ -78,6 +79,12 @@ export function useIdentifyPlant() {
 			setDisabled(true);
 		}
 	}, [currentImage]);
+
+	useEffect(() => {
+		return () => {
+			setPlantDetails(null);
+		};
+	}, []);
 
 	return {
 		inputRef,
