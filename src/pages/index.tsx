@@ -49,7 +49,7 @@ export default function Home() {
 
 	return (
 		<main
-			className={`flex min-h-screen flex-col items-center justify-between ${inter.className} relative`}
+			className={`min-h-screen max-h-screen ${inter.className} relative`}
 		>
 			<GlobalStyle />
 			<HeroSection
