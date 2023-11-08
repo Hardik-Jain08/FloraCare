@@ -1,5 +1,6 @@
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
+// @ts-ignore
 import Lottie from "react-lottie";
 
 import { useStore } from "@/store";
