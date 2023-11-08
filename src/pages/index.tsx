@@ -31,6 +31,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 import { createGlobalStyle } from "styled-components";
 import { responsiveSizesCSSVariables } from "../../styles/responsiveSizes.styles";
+import { UploadFile } from "@/components/UploadFile";
 
 const GlobalStyle = createGlobalStyle`
   ${responsiveSizesCSSVariables}
@@ -93,15 +94,20 @@ export default function Home() {
 								</ButtonGroupCenteredUptoDesktop> */}
 							</Description>
 						</HeaderTextContent>
-						<PhoneIlloWrap>
-							<HomePageHeroIlloPhone />
-						</PhoneIlloWrap>
-						<TabletIlloWrap>
-							<HomePageHeroIlloTablet />
-						</TabletIlloWrap>
-						<DesktopIlloWrap>
-							<HomePageHeroIlloDesktop />
-						</DesktopIlloWrap>
+						<div className='grid md:grid-cols-3 justify-center'>
+							<div className='md:col-span-2'>
+								<PhoneIlloWrap>
+									<HomePageHeroIlloPhone />
+								</PhoneIlloWrap>
+								<TabletIlloWrap>
+									<HomePageHeroIlloTablet />
+								</TabletIlloWrap>
+								<DesktopIlloWrap>
+									<HomePageHeroIlloDesktop />
+								</DesktopIlloWrap>
+							</div>
+							<UploadFile />
+						</div>
 					</TextAndIllustration>
 
 					<LooseDecorationsSetMiddle>
@@ -186,7 +192,7 @@ const DecoMiddleLeft = styled.div`
 `;
 const DecoMiddleRight = styled.div`
 	position: absolute;
-	left: calc(100% - 5.5em);
+	left: calc(100% - 30em);
 	bottom: 5em;
 `;
 
@@ -335,32 +341,12 @@ const Description = styled.div`
 	text-align: center;
 	font-weight: 500;
 	padding-bottom: 3em;
+	margin-left: auto;
+	font-size: 1.6rem;
+
 	> * + * {
 		margin-top: 1em;
-	}
-	max-width: 25em;
-	margin-left: auto;
-	margin-right: auto;
-	${fromDesktop} {
-		position: absolute;
-		left: 2.4em;
-		bottom: 0;
-		text-align: left;
-		max-width: 20em;
-		line-height: 1.25;
-		font-size: 1.4rem;
-		padding-bottom: 0;
-	}
-	${fromDesktopSm} {
-		left: ${getWidthPcInMaxGrid(1, true)};
-	}
-	${fromDesktopMd} {
-		font-size: 1.6rem;
-		max-width: 18em;
-		bottom: 1em;
-	}
-	${fromDesktopMl} {
-		max-width: 20em;
+		margin-bottom: 1em;
 	}
 `;
 

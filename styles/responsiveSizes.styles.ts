@@ -90,8 +90,8 @@ export const responsiveSizeMaps = {
 		default: 1.8,
 		tablet: 7,
 		tabletLg: 8.5,
-		desktop: 12.5, // matches sectionMargin at this breakpoint
-		desktopMd: 15.6, // makes max width 1128px, with gap 24px and col width 72px
+		desktop: 8.6, // matches sectionMargin at this breakpoint
+		desktopMd: 6, // makes max width 1128px, with gap 24px and col width 72px
 	},
 	sectionPadding: {
 		default: 4,
