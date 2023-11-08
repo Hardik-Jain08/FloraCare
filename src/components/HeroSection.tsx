@@ -1,10 +1,12 @@
-import { colors } from "@/styles/colors.styles";
-import { PropsWithChildren, ReactNode } from "react";
-import Spacing from "./Spacing";
-import { GridCanvas } from "./GridCanvas";
 import { cx } from "linaria";
+import { PropsWithChildren, ReactNode } from "react";
 import styled from "styled-components";
+
+import { colors } from "@/styles/colors.styles";
 import { maxPageContentWidthStyleObject } from "@/styles/maxPageContentWidth.styles";
+
+import { GridCanvas } from "./GridCanvas";
+import Spacing from "./Spacing";
 
 const HeroSection = (
 	props: PropsWithChildren<{

@@ -1,7 +1,7 @@
-import { Html, Head, Main, NextScript } from 'next/document'
-import { responsiveSizesCSSVariables } from "../styles/responsiveSizes.styles";
-
+import { Head, Html, Main, NextScript } from "next/document";
 import { createGlobalStyle } from "styled-components";
+
+import { responsiveSizesCSSVariables } from "@/styles/responsiveSizes.styles";
 
 const GlobalStyle = createGlobalStyle`
   ${responsiveSizesCSSVariables}
