@@ -1,15 +1,15 @@
 import { ReactNode, RefObject, useRef, useState } from "react";
-import { useOnMount } from "../../utils/lifeCycle.utils";
-import { getElementBoundingBoxFromPage } from "../../utils/boundingRect.utils";
+import { useOnMount } from "../utils/lifeCycle.utils";
+import { getElementBoundingBoxFromPage } from "../utils/boundingRect.utils";
 import { cx } from "linaria";
-import { useStateWithRef } from "../../utils/stateWithRef.hook";
+import { useStateWithRef } from "../utils/stateWithRef.hook";
 import { gsap } from "gsap";
-import { isChrome } from "../../utils/browser.utils";
-import { onFontReady } from "../../utils/fonts.utils";
+import { isChrome } from "../utils/browser.utils";
+import { onFontReady } from "../utils/fonts.utils";
 import { clamp } from "lodash-es";
-import { colorsV4 } from "../../styles/colorsV4.styles";
-import { clearAnimatedProps } from "../../utils/animations.utils";
-import { debounce } from "../../utils/debounce.utils";
+import { colorsV4 } from "../styles/colorsV4.styles";
+import { clearAnimatedProps } from "../utils/animations.utils";
+import { debounce } from "../utils/debounce.utils";
 import styled from "styled-components";
 
 const CasesGridCanvasContainer = styled.div`

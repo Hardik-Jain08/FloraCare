@@ -6,13 +6,13 @@ import {
 	getColAndGapsFromShorthand,
 	isGridContentWidthShorthand,
 	widthInGrid,
-} from "../../constants/globalGrid.constants";
-import { colorsV4, withOpacity } from "../../styles/colorsV4.styles";
+} from "../constants/globalGrid.constants";
+import { colorsV4, withOpacity } from "../styles/colorsV4.styles";
 import {
 	ResponsiveSizeName,
 	isResponsiveSizeName,
 	rSize,
-} from "../../styles/responsiveSizes.styles";
+} from "../styles/responsiveSizes.styles";
 
 export type SpacingProps = {
 	inline?: boolean;
