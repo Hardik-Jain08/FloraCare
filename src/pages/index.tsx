@@ -67,12 +67,12 @@ export default function Home() {
 						</LooseDecorationsSetTop>
 						<HeaderTextContent>
 							<HeadingGroup>
-								<h1 className='heading'>
+								<h1 className='heading animate-title'>
 									<span>Flora Care</span>
 								</h1>
 							</HeadingGroup>
 							<Description>
-								<p className='font-light mt-2 text-gray-200'>
+								<p className='font-light mt-2 text-gray-200 animate-subtitle'>
 									Your pocket plant expert
 								</p>
 								{/* <ButtonGroupCenteredUptoDesktop>

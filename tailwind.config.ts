@@ -15,9 +15,10 @@ const config: Config = {
 			},
 			animation: {
 				fade: "smoothAnimate 200ms ease-in-out",
+				title: "fadeIn 300ms ease-in-out",
+				subtitle: "fadeIn 400ms ease-in-out",
 			},
-
-			// that is actual animation
+			// @ts-ignore
 			keyframes: (theme: any) => ({
 				fadeIn: {
 					"0%": { opacity: 0 },
