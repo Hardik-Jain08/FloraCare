@@ -1,20 +1,8 @@
-import { PropsWithChildren, ReactNode, useEffect, useState } from "react";
-import { Inter } from "next/font/google";
-import { styled } from "styled-components";
-import { colors } from "../styles/colors.styles";
-import { GridCanvas } from "../components/GridCanvas";
-import { maxPageContentWidthStyleObject } from "../styles/maxPageContentWidth.styles";
 import { cx } from "linaria";
-import {
-	fromDesktop,
-	fromDesktopMl,
-	fromTablet,
-	fromTabletMd,
-	onlyPhones,
-	onlyTablets,
-	uptoDesktop,
-} from "../styles/breakpointsAndMediaQueries.styles";
-import Spacing from "@/components/Spacing";
+import { Inter } from "next/font/google";
+import { PropsWithChildren, ReactNode, useEffect, useState } from "react";
+import { createGlobalStyle, styled } from "styled-components";
+
 import {
 	DecoMiniFlowerPurple,
 	DecoMiniFlowerYellow,
@@ -24,10 +12,24 @@ import {
 	HomePageHeroIlloPhone,
 	HomePageHeroIlloTablet,
 } from "@/components/graphics";
-const inter = Inter({ subsets: ["latin"] });
-import { createGlobalStyle } from "styled-components";
-import { responsiveSizesCSSVariables } from "@/styles/responsiveSizes.styles";
+import Spacing from "@/components/Spacing";
 import { UploadFile } from "@/components/UploadFile";
+import { responsiveSizesCSSVariables } from "@/styles/responsiveSizes.styles";
+
+import { GridCanvas } from "../components/GridCanvas";
+import {
+	fromDesktop,
+	fromDesktopMl,
+	fromTablet,
+	fromTabletMd,
+	onlyPhones,
+	onlyTablets,
+	uptoDesktop,
+} from "../styles/breakpointsAndMediaQueries.styles";
+import { colors } from "../styles/colors.styles";
+import { maxPageContentWidthStyleObject } from "../styles/maxPageContentWidth.styles";
+
+const inter = Inter({ subsets: ["latin"] });
 
 const GlobalStyle = createGlobalStyle`
   ${responsiveSizesCSSVariables}
