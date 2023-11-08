@@ -1,7 +1,8 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export function useIdentifyPlant() {
+	const inputRef = useRef<HTMLInputElement>(null);
 	const [disabled, setDisabled] = useState<boolean>(true);
 	const [currentImage, setCurrentImage] = useState<File | null>(null);
 	const [error, setError] = useState<string | null>(null);
@@ -16,7 +17,10 @@ export function useIdentifyPlant() {
 
 	const identifyPlant = async () => {
 		try {
+			console.log("Running");
+
 			setLoading(true);
+			setDisabled(true);
 			setError(null);
 
 			const formData = new FormData();
@@ -43,10 +47,16 @@ export function useIdentifyPlant() {
 		}
 
 		setLoading(false);
+		setDisabled(false);
 	};
 
 	const onClickHandler = () => {
 		identifyPlant();
+	};
+
+	const clearInput = () => {
+		setCurrentImage(null);
+		inputRef.current!.value = "";
 	};
 
 	useEffect(() => {
@@ -58,10 +68,12 @@ export function useIdentifyPlant() {
 	}, [currentImage]);
 
 	return {
+		inputRef,
 		disabled,
 		currentImage,
 		error,
 		loading,
+		clearInput,
 		onImageChange,
 		onClickHandler,
 	};
