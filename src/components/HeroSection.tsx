@@ -5,7 +5,6 @@ import styled from "styled-components";
 import { colors } from "@/styles/colors.styles";
 import { maxPageContentWidthStyleObject } from "@/styles/maxPageContentWidth.styles";
 
-<<<<<<< HEAD
 import { GridCanvas } from "./GridCanvas";
 import Spacing from "./Spacing";
 
@@ -27,26 +26,6 @@ const HeroSection = (
 	const backdropColor = props.backdropColor ?? colors.purple100;
 	const hasBackground = props.backdrop || props.backdropColor;
 
-=======
-const HeroSection = (
-	props: PropsWithChildren<{
-		largeHeading?: boolean;
-		backgroundColor?: string;
-		textColor?: string;
-		backdrop?: "grid" | "dots";
-		backdropColor?: string;
-		backdropPositionBottom?: string;
-		/** only available to the grid design */
-		backdropParallax?: boolean;
-		/** only available to the grid design */
-		backdropAnimateIn?: boolean;
-		backdropLayerChildren?: ReactNode;
-	}>
-) => {
-	const backdropColor = props.backdropColor ?? colors.purple100;
-	const hasBackground = props.backdrop || props.backdropColor;
-
->>>>>>> parent of 1e9029d (logo icon and title added with import fixes)
 	return (
 		<HeroSectionWrap textColor={props.textColor}>
 			<Spacing size='xxl' />
@@ -128,8 +107,4 @@ const Content = styled.div`
 		margin-left: auto;
 		margin-right: auto;
 	}
-<<<<<<< HEAD
 `;
-=======
-`;
->>>>>>> parent of 1e9029d (logo icon and title added with import fixes)
