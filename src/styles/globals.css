@@ -24,3 +24,12 @@ body {
 body::-webkit-scrollbar { 
     display: none;
 }
+
+@keyframes moveUpAndDown {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px); /* Adjust the distance as desired */
+    }
+  }
