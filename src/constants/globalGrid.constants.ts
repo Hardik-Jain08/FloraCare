@@ -1,7 +1,8 @@
 import { css } from "styled-components";
+
 import {
-	in12ColGrid,
 	in8ColGrid,
+	in12ColGrid,
 	whenOverMaxWidth,
 } from "../styles/breakpointsAndMediaQueries.styles";
 import { rSize } from "../styles/responsiveSizes.styles";

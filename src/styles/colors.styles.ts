@@ -1,6 +1,9 @@
+// @ts-ignore
 import chroma from "chroma-js";
-import { getStandardColorThemeNameV4, withOpacity } from "./colorsV4.styles";
 import { CSSProperties } from "react";
+
+import { getStandardColorThemeNameV4, withOpacity } from "./colorsV4.styles";
+
 export { withOpacity } from "./colorsV4.styles";
 
 export const getStandardColorThemeName = getStandardColorThemeNameV4;

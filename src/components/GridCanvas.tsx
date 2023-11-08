@@ -1,5 +1,6 @@
 import { gsap } from "gsap";
 import { cx } from "linaria";
+// @ts-ignore
 import { clamp } from "lodash-es";
 import { ReactNode, RefObject, useRef, useState } from "react";
 import styled from "styled-components";
