@@ -352,7 +352,7 @@ const Description = styled.div`
 		padding-bottom: 0;
 	}
 	${fromDesktopSm} {
-		left: ${getWidthPcInMaxGrid(3, true)};
+		left: ${getWidthPcInMaxGrid(1, true)};
 	}
 	${fromDesktopMd} {
 		font-size: 1.6rem;
