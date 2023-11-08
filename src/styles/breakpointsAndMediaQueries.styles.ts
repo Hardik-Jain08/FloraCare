@@ -1,5 +1,5 @@
 import { css } from "styled-components";
-import { isBuildTime } from "../../environment";
+import { isBuildTime } from "../utils/environment";
 import { isNumber } from "../utils/typeChecks.utils";
 
 export type BreakpointName = keyof typeof breakpoints;
