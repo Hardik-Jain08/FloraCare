@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 export function debounce<T extends Function>(
 	fn: T,
 	options: {
@@ -30,7 +29,6 @@ export function debounce<T extends Function>(
 	};
 	// @ts-ignore
 	return (...args) => {
-		// eslint-disable-next-line @typescript-eslint/no-unsafe-return
 		const fire = () => fn.apply(scope, args);
 		if (fireImmediately && !hasFiredImmediately) {
 			if (typeof options.fireImmediately === "function") {

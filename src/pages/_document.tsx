@@ -1,5 +1,5 @@
 import { Html, Head, Main, NextScript } from 'next/document'
-import { responsiveSizesCSSVariables } from "../../styles/responsiveSizes.styles";
+import { responsiveSizesCSSVariables } from "../styles/responsiveSizes.styles";
 
 import { createGlobalStyle } from "styled-components";
 

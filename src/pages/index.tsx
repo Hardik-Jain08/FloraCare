@@ -1,9 +1,10 @@
+import { PropsWithChildren, ReactNode, useEffect, useState } from "react";
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import { styled } from "styled-components";
-import { colors } from "../../styles/colors.styles";
-import { GridCanvas } from "./GridCanvas";
-import { maxPageContentWidthStyleObject } from "../../styles/maxPageContentWidth.styles";
+import { colors } from "../styles/colors.styles";
+import { GridCanvas } from "../components/GridCanvas";
+import { maxPageContentWidthStyleObject } from "../styles/maxPageContentWidth.styles";
 import { cx } from "linaria";
 import {
 	fromDesktop,
@@ -15,22 +16,13 @@ import {
 	onlyPhones,
 	onlyTablets,
 	uptoDesktop,
-} from "../../styles/breakpointsAndMediaQueries.styles";
-import { DecoNonagonPhone } from "@/components/graphics/DecoNonagonPhone";
-import { DecoMiniFlowerPurple } from "@/components/graphics/DecoMiniFlowerPurple";
-import { HomePageHeroIlloPhone } from "@/components/graphics/HomePageHeroIlloPhone";
-import { HomePageHeroIlloTablet } from "@/components/graphics/HomePageHeroIlloTablet";
-import { HomePageHeroIlloDesktop } from "@/components/graphics/HomePageHeroIlloDesktop";
-import { DecoStickies } from "@/components/graphics/DecoStickies";
-import { DecoMiniFlowerYellow } from "@/components/graphics/DecoMiniFlowerYellow";
-import { getWidthPcInMaxGrid } from "../../constants/globalGrid.constants";
-import { PropsWithChildren, ReactNode, useEffect, useState } from "react";
-import Spacing from "./Spacing";
-
+} from "../styles/breakpointsAndMediaQueries.styles";
+import { getWidthPcInMaxGrid } from "../constants/globalGrid.constants";
+import Spacing from "../components/Spacing";
+import { DecoMiniFlowerPurple, DecoMiniFlowerYellow, DecoNonagonPhone, DecoStickies, HomePageHeroIlloDesktop, HomePageHeroIlloPhone, HomePageHeroIlloTablet } from '@/components/graphics';
 const inter = Inter({ subsets: ["latin"] });
-
 import { createGlobalStyle } from "styled-components";
-import { responsiveSizesCSSVariables } from "../../styles/responsiveSizes.styles";
+import { responsiveSizesCSSVariables } from "../styles/responsiveSizes.styles";
 
 const GlobalStyle = createGlobalStyle`
   ${responsiveSizesCSSVariables}
