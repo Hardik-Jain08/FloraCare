@@ -1,6 +1,6 @@
 export function UploadFile() {
 	return (
-		<div className='flex items-center justify-center w-full py-12'>
+		<div className='flex items-center justify-center w-full py-12 flex-col'>
 			<label
 				for='dropzone-file'
 				className='flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer backdrop-blur-md hover:backdrop-blur-sm'
@@ -31,6 +31,9 @@ export function UploadFile() {
 				</div>
 				<input id='dropzone-file' type='file' className='hidden' />
 			</label>
+			<button className='px-4 py-2 mt-4 text-sm font-medium text-[#6956a8] hover:text-[#7f69ce] bg-[#eadff8] rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 w-full'>
+				Upload
+			</button>
 		</div>
 	);
 }
