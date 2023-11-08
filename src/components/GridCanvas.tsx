@@ -1,8 +1,23 @@
+<<<<<<< HEAD
 import { gsap } from "gsap";
 import { cx } from "linaria";
 // @ts-ignore
 import { clamp } from "lodash-es";
 import { ReactNode, RefObject, useRef, useState } from "react";
+=======
+import { ReactNode, RefObject, useRef, useState } from "react";
+import { useOnMount } from "../utils/lifeCycle.utils";
+import { getElementBoundingBoxFromPage } from "../utils/boundingRect.utils";
+import { cx } from "linaria";
+import { useStateWithRef } from "../utils/stateWithRef.hook";
+import { gsap } from "gsap";
+import { isChrome } from "../utils/browser.utils";
+import { onFontReady } from "../utils/fonts.utils";
+import { clamp } from "lodash-es";
+import { colorsV4 } from "../styles/colorsV4.styles";
+import { clearAnimatedProps } from "../utils/animations.utils";
+import { debounce } from "../utils/debounce.utils";
+>>>>>>> parent of 1e9029d (logo icon and title added with import fixes)
 import styled from "styled-components";
 
 import { colorsV4 } from "@/styles/colorsV4.styles";
