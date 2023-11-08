@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 import Head from "next/head";
 import { useEffect, useState } from "react";
-import { createGlobalStyle, styled } from "styled-components";
+import { styled } from "styled-components";
 
 import {
 	DecoMiniFlowerPurple,
@@ -13,6 +13,7 @@ import {
 	HomePageHeroIlloTablet,
 } from "@/components/graphics";
 import HeroSection from "@/components/HeroSection";
+import { PlantDetails } from "@/components/PlantDetails";
 import { UploadFile } from "@/components/UploadFile";
 import {
 	fromDesktop,
@@ -24,59 +25,55 @@ import {
 	uptoDesktop,
 } from "@/styles/breakpointsAndMediaQueries.styles";
 import { colors } from "@/styles/colors.styles";
-import { responsiveSizesCSSVariables } from "@/styles/responsiveSizes.styles";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const GlobalStyle = createGlobalStyle`
-  ${responsiveSizesCSSVariables}
-`;
-
 export default function Home() {
-  const [show, setShow] = useState(false);
+	const [show, setShow] = useState(false);
 
-  useEffect(() => {
-    setShow(true);
-  }, []);
+	useEffect(() => {
+		setShow(true);
+	}, []);
 
-  if (!show) {
-    return null;
-  }
+	if (!show) {
+		return null;
+	}
 
-  return (
-    <main className={`min-h-screen max-h-screen ${inter.className} relative`}>
-      <Head>
-        <title>FloraCare</title>
-      </Head>
-      <GlobalStyle />
-      <HeroSection
-        backgroundColor={colors.purple500}
-        textColor={colors.white}
-        largeHeading
-        backdrop="grid"
-        backdropColor={colors.purple600}
-        backdropParallax
-        backdropAnimateIn
-      >
-        <Header>
-          <TextAndIllustration>
-            <LooseDecorationsSetTop>
-              <DecoTopLeft>
-                <DecoNonagonPhone />
-              </DecoTopLeft>
-              <DecoTopRight>
-                <DecoMiniFlowerPurple />
-              </DecoTopRight>
-            </LooseDecorationsSetTop>
-            <HeaderTextContent>
-              <HeadingGroup>
-                <h1 className="heading">
-                  <span>Flora Care</span>
-                </h1>
-              </HeadingGroup>
-              <Description>
-                <p>Something about a new world!</p>
-                {/* <ButtonGroupCenteredUptoDesktop>
+	return (
+		<main
+			className={`min-h-screen max-h-screen ${inter.className} relative`}
+		>
+			<Head>
+				<title>FloraCare</title>
+			</Head>
+			<HeroSection
+				backgroundColor={colors.purple500}
+				textColor={colors.white}
+				largeHeading
+				backdrop='grid'
+				backdropColor={colors.purple600}
+				backdropParallax
+				backdropAnimateIn
+			>
+				<Header>
+					<TextAndIllustration>
+						<LooseDecorationsSetTop>
+							<DecoTopLeft>
+								<DecoNonagonPhone />
+							</DecoTopLeft>
+							<DecoTopRight>
+								<DecoMiniFlowerPurple />
+							</DecoTopRight>
+						</LooseDecorationsSetTop>
+						<HeaderTextContent>
+							<HeadingGroup>
+								<h1 className='heading'>
+									<span>Flora Care</span>
+								</h1>
+							</HeadingGroup>
+							<Description>
+								<p>Something about a new world!</p>
+								{/* <ButtonGroupCenteredUptoDesktop>
 									<SignUpButton
 										appearance='filled-white'
 										width='8em'
@@ -87,36 +84,37 @@ export default function Home() {
 										width='8em'
 									/>
 								</ButtonGroupCenteredUptoDesktop> */}
-              </Description>
-            </HeaderTextContent>
-            <div className="grid md:grid-cols-3 justify-center">
-              <div className="md:col-span-2">
-                <PhoneIlloWrap>
-                  <HomePageHeroIlloPhone />
-                </PhoneIlloWrap>
-                <TabletIlloWrap>
-                  <HomePageHeroIlloTablet />
-                </TabletIlloWrap>
-                <DesktopIlloWrap>
-                  <HomePageHeroIlloDesktop />
-                </DesktopIlloWrap>
-              </div>
-              <UploadFile />
-            </div>
-          </TextAndIllustration>
+							</Description>
+						</HeaderTextContent>
+						<div className='grid md:grid-cols-3 justify-center'>
+							<div className='md:col-span-2'>
+								<PhoneIlloWrap>
+									<HomePageHeroIlloPhone />
+								</PhoneIlloWrap>
+								<TabletIlloWrap>
+									<HomePageHeroIlloTablet />
+								</TabletIlloWrap>
+								<DesktopIlloWrap>
+									<HomePageHeroIlloDesktop />
+								</DesktopIlloWrap>
+							</div>
+							<UploadFile />
+						</div>
+					</TextAndIllustration>
 
-          <LooseDecorationsSetMiddle>
-            <DecoMiddleLeft>
-              <DecoStickies />
-            </DecoMiddleLeft>
-            <DecoMiddleRight>
-              <DecoMiniFlowerYellow />
-            </DecoMiddleRight>
-          </LooseDecorationsSetMiddle>
-        </Header>
-      </HeroSection>
-    </main>
-  );
+					<LooseDecorationsSetMiddle>
+						<DecoMiddleLeft>
+							<DecoStickies />
+						</DecoMiddleLeft>
+						<DecoMiddleRight>
+							<DecoMiniFlowerYellow />
+						</DecoMiddleRight>
+					</LooseDecorationsSetMiddle>
+				</Header>
+				<PlantDetails />
+			</HeroSection>
+		</main>
+	);
 }
 
 const LooseDecorationsSetBottom = styled.div`

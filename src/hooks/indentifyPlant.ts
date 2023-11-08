@@ -1,12 +1,15 @@
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 
+import { useStore } from "@/store";
+
 export function useIdentifyPlant() {
 	const inputRef = useRef<HTMLInputElement>(null);
 	const [disabled, setDisabled] = useState<boolean>(true);
 	const [currentImage, setCurrentImage] = useState<File | null>(null);
 	const [error, setError] = useState<string | null>(null);
 	const [loading, setLoading] = useState<boolean>(false);
+	const { setPlantDetails } = useStore();
 
 	const onImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		if (event.target.files && event.target.files[0]) {
@@ -15,13 +18,19 @@ export function useIdentifyPlant() {
 		}
 	};
 
+	function parsePlantDetails(data: any) {
+		setPlantDetails({
+			name: data.bestMatch,
+			score: data.results[0].score,
+		});
+	}
+
 	const identifyPlant = async () => {
 		try {
-			console.log("Running");
-
 			setLoading(true);
 			setDisabled(true);
 			setError(null);
+			setPlantDetails(null);
 
 			const formData = new FormData();
 
@@ -41,6 +50,7 @@ export function useIdentifyPlant() {
 				data: formData,
 			});
 
+			parsePlantDetails(response.data);
 			console.log(response.data);
 		} catch (error: any) {
 			setError(error.message);
@@ -55,6 +65,8 @@ export function useIdentifyPlant() {
 	};
 
 	const clearInput = () => {
+		setError(null);
+		setPlantDetails(null);
 		setCurrentImage(null);
 		inputRef.current!.value = "";
 	};

@@ -47,7 +47,6 @@ const HeroSection = (
 			<Content className={cx(props.largeHeading && "largeHeading")}>
 				{props.children}
 			</Content>
-			{hasBackground && <Spacing size='sectionPadding' />}
 		</HeroSectionWrap>
 	);
 };
@@ -58,6 +57,7 @@ const HeroSectionWrap = styled.header<{
 	textColor?: string;
 }>`
 	width: 100%;
+	height: 100vh;
 	position: relative;
 	text-align: center;
 	color: ${(p) => p.textColor ?? "inherit"};
