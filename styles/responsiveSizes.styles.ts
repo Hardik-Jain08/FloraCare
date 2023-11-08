@@ -147,6 +147,8 @@ export const responsiveSizeMaps = {
 	},
 };
 
+type StringObject = Record<string, string>;
+
 const respSizesMappedToCSSVariables = (() => {
 	const result = {} as Record<string, string | StringObject>;
 	Object.entries(responsiveSizeMaps).forEach(([sizeName, sizeRespSizes]) => {

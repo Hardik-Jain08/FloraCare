@@ -24,12 +24,22 @@ import { HomePageHeroIlloDesktop } from "@/components/graphics/HomePageHeroIlloD
 import { DecoStickies } from "@/components/graphics/DecoStickies";
 import { DecoMiniFlowerYellow } from "@/components/graphics/DecoMiniFlowerYellow";
 import { getWidthPcInMaxGrid } from "../../constants/globalGrid.constants";
-import { PropsWithChildren, ReactNode } from "react";
+import { PropsWithChildren, ReactNode, useEffect, useState } from "react";
 import Spacing from "./Spacing";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+	const [show, setShow] = useState(false);
+
+	useEffect(() => {
+		setShow(true);
+	}, []);
+
+	if (!show) {
+		return null;
+	}
+
 	return (
 		<main
 			className={`flex min-h-screen flex-col items-center justify-between ${inter.className} relative`}
@@ -57,12 +67,11 @@ export default function Home() {
 						<HeaderTextContent>
 							<HeadingGroup>
 								<h1 className='heading'>
-									<span>Flora</span>
-									<span>Secure </span>
+									<span>Flora Care</span>
 								</h1>
 							</HeadingGroup>
 							<Description>
-								<p>Some Lmao Stuff about this</p>
+								<p>Something about a new world!</p>
 								{/* <ButtonGroupCenteredUptoDesktop>
 									<SignUpButton
 										appearance='filled-white'
@@ -289,7 +298,7 @@ const HeadingGroup = styled.div`
 		padding-bottom: 1em;
 	}
 	${fromDesktop} {
-		display: none;
+		padding-bottom: 0;
 	}
 	h1.heading {
 		${inter}
