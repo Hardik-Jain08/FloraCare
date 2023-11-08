@@ -4,12 +4,10 @@ import { useIdentifyPlant } from "@/hooks/indentifyPlant";
 
 export function UploadFile() {
 	const {
-		inputRef,
 		currentImage,
 		disabled,
 		error,
 		loading,
-		clearInput,
 		onImageChange,
 		onClickHandler,
 	} = useIdentifyPlant();
@@ -17,7 +15,7 @@ export function UploadFile() {
 	return (
 		<div className='flex items-center justify-center w-full py-12 flex-col'>
 			<label className='flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer backdrop-blur-md hover:backdrop-blur-sm'>
-				<div className='flex flex-col items-center justify-center p-4 pb-6'>
+				<div className='flex flex-col items-center justify-center pt-5 pb-6'>
 					{!currentImage && (
 						<>
 							<svg
@@ -42,7 +40,7 @@ export function UploadFile() {
 								or drag and drop
 							</p>
 							<p className='text-xs text-gray-300'>
-								SVG, PNG, JPG or GIF
+								SVG, PNG, JPG or GIF (MAX. 800x400px)
 							</p>
 						</>
 					)}
@@ -64,44 +62,26 @@ export function UploadFile() {
 							</p>
 						</div>
 					)}
-					{loading && (
-						<div className='relative w-full h-1 mt-4 bg-gray-300 rounded-full animate-pulse '>
-							<div className='absolute top-0 left-0 h-full bg-[#6956a8]'></div>
-						</div>
-					)}
-					{error && (
-						<p className='mt-4 text-xs text-red-500'>{error}</p>
-					)}
 				</div>
+				{loading && (
+					<div className='relative w-full h-1 mt-4 bg-gray-200 rounded-full'>
+						<div className='absolute top-0 left-0 h-full bg-[#6956a8] rounded-full animate-pulse'></div>
+					</div>
+				)}
 				<input
 					id='dropzone-file'
 					type='file'
 					className='hidden'
 					onChange={onImageChange}
-					ref={inputRef}
-					accept='image/*'
 				/>
 			</label>
-			<div className='w-full flex flex-row justify-between gap-2'>
-				<button
-					className={`px-4 py-2 mt-4 text-sm font-medium text-[#6956a8] hover:text-[#7f69ce] bg-[#eadff8] rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 disabled:opacity-50 disabled:cursor-not-allowed ${
-						currentImage ? "w-80" : "w-full"
-					} `}
-					disabled={disabled}
-					onClick={onClickHandler}
-				>
-					Upload
-				</button>
-				{currentImage && (
-					<button
-						className='px-4 py-2 mt-4 text-sm font-medium rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 w-20 disabled:opacity-50 disabled:cursor-not-allowed bg-red-400 hover:bg-red-5'
-						disabled={disabled}
-						onClick={clearInput}
-					>
-						Clear
-					</button>
-				)}
-			</div>
+			<button
+				className='px-4 py-2 mt-4 text-sm font-medium text-[#6956a8] hover:text-[#7f69ce] bg-[#eadff8] rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 w-full disabled:opacity-50 disabled:cursor-not-allowed'
+				disabled={disabled}
+				onClick={onClickHandler}
+			>
+				Upload
+			</button>
 		</div>
 	);
 }
