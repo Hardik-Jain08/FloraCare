@@ -168,10 +168,8 @@ const respSizesMappedToCSSVariables = (() => {
 })();
 
 export const responsiveSizesCSSVariables = css`
-	:global() {
-		html {
-			${respSizesMappedToCSSVariables}
-		}
+	html {
+		${respSizesMappedToCSSVariables}
 	}
 `;
 

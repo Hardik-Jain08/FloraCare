@@ -29,6 +29,13 @@ import Spacing from "./Spacing";
 
 const inter = Inter({ subsets: ["latin"] });
 
+import { createGlobalStyle } from "styled-components";
+import { responsiveSizesCSSVariables } from "../../styles/responsiveSizes.styles";
+
+const GlobalStyle = createGlobalStyle`
+  ${responsiveSizesCSSVariables}
+`;
+
 export default function Home() {
 	const [show, setShow] = useState(false);
 
@@ -44,6 +51,7 @@ export default function Home() {
 		<main
 			className={`flex min-h-screen flex-col items-center justify-between ${inter.className} relative`}
 		>
+			<GlobalStyle />
 			<HeroSection
 				backgroundColor={colors.purple500}
 				textColor={colors.white}
@@ -344,7 +352,7 @@ const Description = styled.div`
 		padding-bottom: 0;
 	}
 	${fromDesktopSm} {
-		left: ${getWidthPcInMaxGrid(1, true)};
+		left: ${getWidthPcInMaxGrid(3, true)};
 	}
 	${fromDesktopMd} {
 		font-size: 1.6rem;
