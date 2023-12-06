@@ -4,6 +4,9 @@ interface PlantDetails {
 	name: string;
 	commonName: string;
 	score: number;
+	details: {
+		[key: string]: string;
+	}
 }
 
 interface Store {

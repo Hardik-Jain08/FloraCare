@@ -23,6 +23,19 @@ export function useIdentifyPlant() {
 			name: data.bestMatch,
 			score: data.results[0].score,
 			commonName: data.results[0].species.commonNames[0],
+			details: {
+				commonDiseases: data.plantDetails.plant_info.info.diseases.common,
+				fertilizers: data.plantDetails.plant_info.info.fertilizers.requirement,
+				flowers: data.plantDetails.plant_info.info.flowers.blooming_season,
+				fruits: data.plantDetails.plant_info.info.fruits.harvest_time,
+				growth: data.plantDetails.plant_info.info.growth.rate,
+				humidity: data.plantDetails.plant_info.info.humidity.requirement,
+				light: data.plantDetails.plant_info.info.light.requirement,
+				propagation: data.plantDetails.plant_info.info.propagation.method,
+				soil: data.plantDetails.plant_info.info.soil.requirement,
+				temperature: data.plantDetails.plant_info.info.temperature.requirement,
+				watering: data.plantDetails.plant_info.info.watering.requirement,
+			}
 		});
 	}
 
@@ -42,7 +55,7 @@ export function useIdentifyPlant() {
 				formData.append("images", blob, currentImage.name);
 			}
 
-			const response = await axios({
+			const plantImageResponse = await axios({
 				method: "POST",
 				url: "https://my-api.plantnet.org/v2/identify/all?include-related-images=false&no-reject=false&lang=en&api-key=2b10kz1JwOTIE0xhpLqPNcLTe",
 				headers: {
@@ -51,8 +64,27 @@ export function useIdentifyPlant() {
 				data: formData,
 			});
 
-			parsePlantDetails(response.data);
-			console.log(response.data);
+			const commonName = plantImageResponse.data.results[0].species.commonNames[0];
+
+			const plantDetailsResponse = await axios({
+				method: 'GET',
+				url: 'https://plantwise.p.rapidapi.com/plant_care/',
+				params: {
+					plant_type: `${commonName}`
+				},
+				headers: {
+					'X-RapidAPI-Key': '6cd54197d5msh49f7537d5705f0ep145e1djsn9be119467a4d',
+					'X-RapidAPI-Host': 'plantwise.p.rapidapi.com'
+				}
+			});
+
+			const data = {
+				...plantImageResponse.data,
+				plantDetails: plantDetailsResponse.data
+			}
+
+			parsePlantDetails(data);
+			console.log(data);
 		} catch (error: any) {
 			setError(error.message);
 		}
