@@ -26,7 +26,7 @@ export function PlantDetails() {
 					</h3>
 					<div className='flex flex-col md:flex-row gap-4 md:gap-12 justify-center text-lg md:text-2xl font-light text-gray-300'>
 						<span>Score: {plantDetails.score}</span>
-						<span>Common Name: {plantDetails.name}</span>
+						<span>Scientific Name: {plantDetails.name}</span>
 					</div>
 
 					<ul>
